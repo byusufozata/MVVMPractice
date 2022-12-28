@@ -25,7 +25,13 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let isValid = authenticationViewModel.validatingFieldsForLogin()
+        
+        if isValid.0 {
+            print("Calling API")
+        }else {
+            print(isValid)
+        }
     }
     //MARK: - Action
     
